@@ -1,0 +1,13 @@
+kind: Pod
+apiVersion: v1
+metadata:
+  name: pod1
+spec:
+  containers:
+    - name: container1
+      image: ubuntu
+      command: ["/bin/bash", "-c", "while true; do echo This is day04 and We are setting up Minikube; sleep 5 ; done"]
+    - name: container2
+      image: ubuntu
+      command: ['/bin/bash', "-c", "while true; do echo Second Container is still running; sleep 3 ; done"]
+  restartPolicy: Never
