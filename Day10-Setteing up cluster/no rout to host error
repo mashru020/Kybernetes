@@ -1,0 +1,23 @@
+"No route to host" when trying to connect to a TCP service on an Oracle Cloud Intance
+
+The following extra steps were needed on the Oracle cloud, to open up ports on Ubuntu 20:
+
+    sudo vim /etc/iptables/rules.v4 (or whatever editor you use)
+
+    After the line -A INPUT -p tcp -m state --state NEW -m tcp --dport 22 -j ACCEPT , insert:
+
+-A INPUT -p tcp -m state --state NEW -m tcp --dport 1234 -j ACCEPT
+
+(change the number of the port that needs to be opened!)
+
+    At the shell prompt:
+
+sudo su -
+
+iptables-restore < /etc/iptables/rules.v4
+
+exit
+
+    The newly-opened port may be tested by going on another Linux machine, and issuing the command:
+
+nc -zvw100  THE_IP_ADDRESS_OF_MACHINE_WHOSE_PORT_WE_OPENED  THE_PORT_NUMBER
