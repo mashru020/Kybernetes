@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: day11-pod2
+  labels:
+    env: testing
+    deaprtment: DevOps
+spec:
+  containers:
+    - name: container1
+      image: nginx
+      ports:
+        - containerPort: 80

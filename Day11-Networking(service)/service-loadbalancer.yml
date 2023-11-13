@@ -1,0 +1,13 @@
+apiVersion: v1
+type: Service
+metadata:
+  name: lb-svc
+spec:
+  type: Loadbalancer
+  selector:
+    tag: DevOps
+  ports:
+    name: port-lb
+    protocol: TCP
+    port: 80
+    targetPort: 80
