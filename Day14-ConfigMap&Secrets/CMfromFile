@@ -1,0 +1,3 @@
+echo "this is my firsc Configmap file" >> first.conf
+
+kubectl create cm cm1 --from-file=first.conf
