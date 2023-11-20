@@ -1,0 +1,11 @@
+apiVersion: apps/v1
+kind: PersistentBolume
+metadata: 
+  name: myebsvol
+spec: 
+  storageClassName: oci-bv
+  capacity:
+    storage: 1Gi
+  accessModes:
+    - ReadWriteOnce
+  persistantBolumeReclaimPolicy: Recycle
