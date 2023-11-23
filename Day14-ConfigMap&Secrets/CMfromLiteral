@@ -1,3 +1,0 @@
-kubectl create cm literal-cm --from-literal=Location=Bangladesh --from-literal=Username=mashru --from-literal=Password=password1234
-
-kubectl describe cm literal-cm

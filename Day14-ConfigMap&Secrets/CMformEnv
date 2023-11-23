@@ -1,1 +1,0 @@
-kubectl create cm env-cm --from-env-file=file.env

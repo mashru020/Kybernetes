@@ -1,0 +1,17 @@
+# create config map from literal 
+kubectl create cm literal-cm --from-literal=Location=Bangladesh --from-literal=Username=mashru --from-literal=Password=password1234
+
+# create config map form file
+echo "this is my firsc Configmap file" >> first.conf
+kubectl create cm cm1 --from-file=first.conf
+
+#create config map form env
+kubectl create cm env-cm --from-env-file=file.env
+
+
+#create configmap form directory
+kubectl create cm cm-directory --from-file=../Config
+
+
+kubectl describe cm <cm-name>
+
