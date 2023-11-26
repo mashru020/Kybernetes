@@ -1,0 +1,11 @@
+apiVersion: v1
+data:
+  file.env: |-
+    Subject1= Bangla
+    Subject2= Math
+    Subject3= English
+    Subject4= Physics
+kind: ConfigMap
+metadata:
+  creationTimestamp: null
+  name: cm.yml

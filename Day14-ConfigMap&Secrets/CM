@@ -15,3 +15,8 @@ kubectl create cm cm-directory --from-file=../Config
 
 kubectl describe cm <cm-name>
 
+#create configmap from yaml
+# - generate yaml file from normal file
+kubectl create cm cm.yml --from-file=file.env --dry-run -o yaml
+#create configmap
+kubectl apply -f cm.yml
