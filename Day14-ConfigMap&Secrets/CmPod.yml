@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: firstpod
+spec: 
+  containers:
+    - image: coolgourav147/nginx-custom
+      name: firstcontainer
+      env:
+       - name: valuefromenv
+         valueFrom:
+           configMapKeyRef:
+             key: Subject2
+             name: cm-from-env
