@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: secret-pod
+spec: 
+  containers:
+    - image: coolgourav147/nginx-custom
+      name: firstcontainer
+      imagePullPolicy: Never
+      env:
+        - name: the-variable
+          valueFrom:
+            secretKeyRef:
+              key: Subject1
+              name: third
