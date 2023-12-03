@@ -1,0 +1,22 @@
+apiVersion: v1
+kind: Pod
+metadata: 
+  name: fourthpod
+spec: 
+  containers: 
+    - image: coolgourav147/nginx-custom
+      name: firstcontainer
+      imagePullPolicy: Never
+      volumeMounts: 
+      - name: vol2 
+        mountPath: "/env-values"
+        readOnly: true
+  volumes:
+    - name: vol2
+      configMap:
+        name: em-from-env
+        items:
+          - key: Subject3
+            path: "topic3"
+          - key: Subject1
+            path: "topic5"

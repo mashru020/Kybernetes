@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: thirdpod
+spec: 
+  containers:
+    - image: coolgourav147/nginx-custom
+      name: firstcontainer
+      imagePullPolicy: Never
+      volumeMounts:
+      - name: test
+        mountPath: "/env-values"
+        readOnly: true  
+  volumes:
+    - name: test
+      configMap:
+            name: em-from-env

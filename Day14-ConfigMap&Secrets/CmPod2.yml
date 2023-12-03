@@ -1,0 +1,25 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: secondpod
+spec:
+  containers:
+    - image: coolgourav147/nginx-custom
+      name: secondcontainer
+      imagePullPolicy: Never
+      env:
+        - name: valuefromenv
+          valueFrom:
+            configMapKeyRef:
+              key: Subject2
+              name: em-from-env
+        - name: valuefromenv2
+          valueFrom:
+            configMapKeyRef:
+              key: env.sh
+              name: cm2
+        - name: valuefromenv3
+          valueFrom:
+            configMapKeyRef:
+              key: Subject4
+              name: em-from-env

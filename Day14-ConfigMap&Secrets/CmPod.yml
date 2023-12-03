@@ -11,4 +11,4 @@ spec:
          valueFrom:
            configMapKeyRef:
              key: Subject2
-             name: cm-from-env
+             name: em-from-env
