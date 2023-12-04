@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata: 
+  name: rq-deployments
+spec:
+  replicas: 4
+  selector: 
+    matchLabels: 
+      objtype: rq-deployments
+  template:
+    metadata:
+      name: rq-pod
+      labels: 
+        objtype: rq-deployments
+    spec: 
+      containers:
+      - name: rq-cont
+        image: ubuntu
+        command: ["bin/bash", "-c", "while true; do echo We are on 18th Day of 30DaysOfKubernetes; sleep 30; done"]
+        resources:  
+          requests:
+            cpu: "50m"
